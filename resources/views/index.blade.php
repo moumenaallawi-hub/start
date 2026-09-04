@@ -51,7 +51,7 @@
         </header>
 
         <h3>Hello From Index File</h3>
-        <a href="#" style="color: red;">...</a>
+        <a href="{{ route('printMyNameRoute') }}" style="color: red;">Print my name</a>
 
         
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
