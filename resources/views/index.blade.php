@@ -51,7 +51,8 @@
         </header>
 
         <h3>Hello From Index File</h3>
-        <a href="{{ route('printMyNameRoute') }}" style="color: red;">Print my name</a>
+        <a target ="_blank" href="{{ route('posts.index') }}" style="color: red;">Go to index function</a>
+        <a target="_blank" href="{{ route('posts.create') }}" style="color: red;">Go to create function</a>
 
         
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
