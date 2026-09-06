@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    $data = ['1', '2', '3', '4', '5'];
+    return view('massa', compact('data'));
 });
 //Route::get('/moumena', [ TestController::class, 'moumena']);
 

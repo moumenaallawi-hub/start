@@ -12,8 +12,9 @@ class PostController extends Controller
     public function index(Request $request)
     {
        // dd($request ->all());    
-          dd($request->input('name'));
-        dd("Hello from PostController index method");
+       // dd($request->input('name'));
+       // dd("Hello from PostController index method");
+       return view('index');
     }
 
     /**
