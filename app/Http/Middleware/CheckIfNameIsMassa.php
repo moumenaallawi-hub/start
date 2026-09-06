@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckIfNameIsMassa
+class CheckIfNameIsMassa 
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,9 @@ class CheckIfNameIsMassa
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->input('name') == 'massa') {
+       if ($request->input('name') == 'massa') {
 
-           return $next($request);
+           return $next($request); 
         } else  {
             abort(403);
         }

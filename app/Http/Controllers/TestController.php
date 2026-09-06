@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
 
     }
 
-    public function printName($name = 'DefaultName'){
+    public function printName($name = 'moumena'){
         dd("Hello $name from printName method");
     }
 }

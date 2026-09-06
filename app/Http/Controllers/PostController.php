@@ -9,8 +9,10 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+       // dd($request ->all());    
+          dd($request->input('name'));
         dd("Hello from PostController index method");
     }
 
