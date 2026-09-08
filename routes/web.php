@@ -26,4 +26,4 @@ Route::get('/', function () {
 
 //Route::get('/hello' , [UserController::class, 'index']);
  
-Route::resource('posts', PostController::class);  
+Route::resource('posts', PostController::class);     
