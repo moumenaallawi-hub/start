@@ -1,6 +1,6 @@
 <?php
 
-//use App\Http\Controllers\PostController;
+
 //use App\Http\Controllers\SingleController;
 //use App\Http\Controllers\TestController;
 //use App\Http\Controllers\UserController;
@@ -31,9 +31,3 @@ use App\Http\Controllers\ThemeController;
 
 //Theme Routes
 
-Route::controller(ThemeController::class)->group(function () {
-    Route::get('/about', 'about');
-    Route::get('/services', 'services');
-    Route::get('/contact', 'contact');
-    
-    });
