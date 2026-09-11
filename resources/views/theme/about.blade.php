@@ -1,3 +1,6 @@
+@extends('theme.master')
+
+
 <!-- /*
 * Bootstrap 5
 * Template Name: Furni
