@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreContactRequest;
+//use Illuminate\Http\Request;
 
 class ThemeController extends Controller
 {
@@ -22,21 +23,36 @@ class ThemeController extends Controller
         return view('theme.contact');
     }
 
-    public function store(Request $request)
+    public function store(StoreContactRequest $request)
     {
-        dd($request->all());
-        //dd($request->input('name'));
-        //dd($request->input('email'));
-        //dd($request->input('message'));
+        $validatedData = $request->validated();
 
-        // $data = $request->validate([
-        //     'name' => 'required|string|max:255',
-        //     'email' => 'required|email|max:255',
-        //     'message' => 'required|string',
-        // ]);
 
-        // Process the validated data (e.g., save to database, send email, etc.)
+    //   $validatedData = $request->validate([
+    // 'first-name' => 'required|string|min:5',
+    // 'last-name' => 'required|string|min:5',
+    // 'email' => 'required|email|unique:users',
+    // 'message' => 'required|string|max:1000' 
+    //   ] , [ 
+    
+    //     'first-name.required' => 'First name is required.',
+    //     'first-name.string' => 'First name must be a string.',
+    //     'first-name.min' => 'First name must be at least 5 characters.',
+    //     'last-name.required' => 'Last name is required.',
+    //     'last-name.string' => 'Last name must be a string.',
+    //     'last-name.min' => 'Last name must be at least 5 characters.',
+    //     'email.required' => 'Email is required.',
+    //     'email.email' => 'Email must be a valid email address.',
+    //     'email.unique' => 'Email has already been taken.',
+    //     'message.required' => 'Message is required.',
+    //     'message.string' => 'Message must be a string.',
+    //     'message.max' => 'Message cannot exceed 1000 characters.',
 
-        // return redirect()->route('theme.contact')->with('success', 'Your message has been sent successfully!');
-    } 
+    //   ]);
+
+      dd($validatedData);
+
+    
+            
+    }
 }
