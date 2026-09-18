@@ -90,9 +90,9 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label class="text-black" for="fname">First name</label>
-                                        <input type="text" class="form-control" id="fname" name="first-name"
-                                            value="{{ old('first-name') }}">
-                                            @error('first-name')
+                                        <input type="text" class="form-control" id="fname" name="first_name"
+                                            value="{{ old('first_name') }}">
+                                            @error('first_name')
                                                 <div style="color: red;">{{ $message }}</div>
                                             @enderror
 
@@ -101,9 +101,9 @@
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label class="text-black" for="lname">Last name</label>
-                                        <input type="text" class="form-control" id="lname" name="last-name"
-                                            value="{{ old('last-name') }}">
-                                            @error('last-name')
+                                        <input type="text" class="form-control" id="lname" name="last_name"
+                                            value="{{ old('last_name') }}">
+                                            @error('last_name')
                                                 <div style="color: red;">{{ $message }}</div>
                                             @enderror
                                     </div>

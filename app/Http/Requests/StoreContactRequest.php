@@ -23,10 +23,10 @@ class StoreContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-             'first-name' => 'required|string|min:5',
-    'last-name' => 'required|string|min:5',
-    'email' => 'required|email|unique:users',
-    'message' => 'required|string|max:1000' 
+            'first_name' => 'required|string|min:5',
+            'last_name' => 'required|string|min:5',
+            'email' => 'required|email|unique:users',
+            'message' => 'required|string|max:1000' 
         ];
     }
 }

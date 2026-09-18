@@ -29,18 +29,18 @@ class ThemeController extends Controller
 
 
     //   $validatedData = $request->validate([
-    // 'first-name' => 'required|string|min:5',
-    // 'last-name' => 'required|string|min:5',
+    // 'first_name' => 'required|string|min:5',
+    // 'last_name' => 'required|string|min:5',
     // 'email' => 'required|email|unique:users',
     // 'message' => 'required|string|max:1000' 
     //   ] , [ 
     
-    //     'first-name.required' => 'First name is required.',
-    //     'first-name.string' => 'First name must be a string.',
-    //     'first-name.min' => 'First name must be at least 5 characters.',
-    //     'last-name.required' => 'Last name is required.',
-    //     'last-name.string' => 'Last name must be a string.',
-    //     'last-name.min' => 'Last name must be at least 5 characters.',
+    //     'first_name.required' => 'First name is required.',
+    //     'first_name.string' => 'First name must be a string.',
+    //     'first_name.min' => 'First name must be at least 5 characters.',
+    //     'last_name.required' => 'Last name is required.',
+    //     'last_name.string' => 'Last name must be a string.',
+    //     'last_name.min' => 'Last name must be at least 5 characters.',
     //     'email.required' => 'Email is required.',
     //     'email.email' => 'Email must be a valid email address.',
     //     'email.unique' => 'Email has already been taken.',
