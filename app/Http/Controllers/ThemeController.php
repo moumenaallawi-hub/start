@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Contact;
 use App\Http\Requests\StoreContactRequest;
 //use Illuminate\Http\Request;
 
@@ -20,8 +20,23 @@ class ThemeController extends Controller
 
     public function contact()
     {
-        return view('theme.contact');
+        //get all contacts from the database then pass them to the view 
+        // $data = Contact::get();
+        // dd($data);
+
+        $contact = new Contact();
+        $contact->first_name = 'John';
+        $contact->last_name = 'Doe';
+        $contact->email = 'john.doe@gmail.com';  
+        $contact->message = 'Hello, this is a test message.';
+        $contact->save();
+
+        dd('Contact saved successfully!');
+
+        return view('theme.contact', compact('data'));
     }
+
+
 
     public function store(StoreContactRequest $request)
     {
