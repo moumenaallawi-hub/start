@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Http\Requests\StoreContactRequest;
+use App\Models\Category;
 //use Illuminate\Http\Request;
 
 class ThemeController extends Controller
@@ -24,16 +25,45 @@ class ThemeController extends Controller
         // $data = Contact::get();
         // dd($data);
 
-        $contact = new Contact();
-        $contact->first_name = 'John';
-        $contact->last_name = 'Doe';
-        $contact->email = 'john.doe@gmail.com';  
-        $contact->message = 'Hello, this is a test message.';
-        $contact->save();
+        //create a new contact and save it to the database
+        // $contact = new Contact();
+        // $contact->first_name = 'John';
+        // $contact->last_name = 'Doe';
+        // $contact->email = 'johndoe@gmail.com';  
+        // $contact->message = 'Hello, this is a test message.';
+        // $contact->save();
 
-        dd('Contact saved successfully!');
+        //create a new contact and save it to the database using the create method
+        // Contact::create([
+        //     'first_name' => 'mam',
+        //     'last_name' => 'mem',
+        //     'email' => 'mammem@gmail.com',
+        //     'message' => 'Hello, this is a test message!.'
+        // ]);
 
-        return view('theme.contact', compact('data'));
+        //update a contact in the database
+        // $contact = Contact::find(1);
+        // $contact->first_name = 'John';
+        // $contact->last_name = 'Doe';
+        // $contact->save();
+
+        //update a contact in the database using the update method
+        // $contact = Contact::find(1);
+        // $contact->update([
+        //     'first_name' => 'John',
+        //     'last_name' => 'Doe',
+        //     ]);
+
+        //delete a contact from the database
+        // $contact = Contact::find(1);
+        // $contact->delete();
+
+
+        //dd('Contact saved successfully!');
+
+        $categories = Category::all();
+
+        return view('theme.contact', compact('categories'));
     }
 
 
@@ -65,9 +95,23 @@ class ThemeController extends Controller
 
     //   ]);
 
-      dd($validatedData);
+    //     dd($validatedData);
+
+        Contact::create($validatedData);
+        return back()->with('status', 'Contact saved successfully!');
+
+    
 
     
             
     }
+
+
+    public function display()
+    {
+        $contacts = Contact::paginate(5);
+        return view('theme.display-contacts' , compact('contacts'));
+    }
+
+
 }

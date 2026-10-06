@@ -1,41 +1,20 @@
 <?php
 
-//use App\Http\Controllers\PostController; 
-//use App\Http\Controllers\SingleController;
-//use App\Http\Controllers\TestController;
-//use App\Http\Controllers\UserController;
-//use App\Http\Middleware\CheckIfNameIsMassa;
-use App\Http\Controllers\ThemeController; 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-/*Route::get('/', function () {
-    $data = ['1', '2', '3', '4', '5'];
-    return view('massa', compact('data'));
-});*/
-//Route::get('/moumena', [ TestController::class, 'moumena']);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-//Route::get('/hello' , SingleController::class);
-//Route::get('/hello2' , SingleController::class);
-
-/*Route::controller(TestController::class)->middleware('check_name')->group(function () {
-    Route::get('/moumena', 'moumena')->name('index');
-    Route::get('/print-name/{name?}', 'printName')->name('printMyNameRoute');
-});*/
-
-//Route::get('/print-name/{name?}', [TestController::class, 'printName'])->name('printMyNameRoute');
-
-//Route::get('/hello' , [UserController::class, 'index']);
- 
-//Route::resource('posts', PostController::class);     
-
-//Theme Routes
-
-Route::controller(ThemeController::class)->name('theme.')->group(function () {
-    Route::get('/about', 'about') ->name('about');
-    Route::get('/services', 'services')->name('services');
-    Route::get('/contact', 'contact')->name('contact');
-    Route::post('/contact/store', 'store')->name('contact.store');
-    
-    });
+require __DIR__.'/auth.php';
